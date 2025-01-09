@@ -1,0 +1,9 @@
+{{- if eq .Values.hubDeployMode "AddOnTemplate" }}
+apiVersion: addon.open-cluster-management.io/v1alpha1
+kind: AddOnDeploymentConfig
+metadata:
+  name: managed-serviceaccount-addon-deploy-config
+  namespace: {{ .Release.Namespace }}
+spec:
+  agentInstallNamespace: open-cluster-management-agent-addon
+{{- end }}
