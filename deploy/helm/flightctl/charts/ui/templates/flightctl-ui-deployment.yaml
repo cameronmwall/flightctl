@@ -93,11 +93,11 @@ spec:
             items:
               - key: ca.crt
                 path: ca.crt
-              {{- if or ((.Values.global).auth).caCert .Values.auth.caCert }}
+            {{- if or ((.Values.global).auth).caCert .Values.auth.caCert }}
               - key: ca_oidc.crt
                 path: ca_oidc.crt
               {{ end }}
-        {{- if eq .Values.global.target "acm" }}
+      {{- if eq .Values.global.target "acm" }}
       - name: flightctl-ui-serving-cert
           secret:
             secretName: flightctl-ui-serving-cert
