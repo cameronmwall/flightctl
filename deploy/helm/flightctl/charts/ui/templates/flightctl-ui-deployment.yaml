@@ -98,7 +98,7 @@ spec:
                 path: ca_oidc.crt
               {{ end }}
         {{- if eq .Values.global.target "acm" }}
-        - name: flightctl-ui-serving-cert
+      - name: flightctl-ui-serving-cert
           secret:
             secretName: flightctl-ui-serving-cert
             defaultMode: 420
